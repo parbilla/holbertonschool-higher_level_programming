@@ -1,46 +1,53 @@
 #include "lists.h"
 
 /**
- * check_cycle - Checks if a singly linked list has a cycle in it.
- * @list: list to check
+ * insert_node - Checks if a singly linked list has a cycle in it.
+ * @head: pointer to head
+ * @
  *
  * Return: 0 (no cycle)
  */
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	/* pointers to linked list, one moves one place, two moves two */
-	listint_t *insert, *temp;
+	listint_t *node, *temp;
 
 	temp = *head;
-	insert = malloc(sizeof(listint_t));
-	if (insert == NULL)
+	node = malloc(sizeof(listint_t));
+	if (node == NULL)
 		return (NULL);
 
-	insert->n = number;
-	insert->next = NULL;
+	node->n = number;
+	node->next = NULL;
 
 	if (*head == NULL)
-		*head = insert;
+	{
+		*head = node;
+		return (node);
+	}
 	else
 	{
-		if (insert->n < temp->n)
+		if (node->n < (*head)->n)
 		{
-			insert->next = *head;
-			*head = insert;
+			node->next = *head;
+			*head = node;
+			return (node);
 		}
 		else
 		{
+			temp = temp->next;
 			while (temp->next != NULL)
 			{
-				insert->next = temp->next;
-				temp->next = insert;
-				temp = insert-next:
-
-
-
-
-			return (1);
+				if (number >= temp->n && number <= temp->next->n) 
+				{
+					node->next = temp->next;
+					temp->next = node;
+					return (node);
+				}
+				temp = temp->next;
+			}
+			temp->next = node;
+			return (node);
+		}
 	}
-	return (0);
 }
