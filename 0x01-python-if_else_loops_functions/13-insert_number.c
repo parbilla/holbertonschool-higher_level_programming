@@ -3,7 +3,7 @@
 /**
  * insert_node - Checks if a singly linked list has a cycle in it.
  * @head: pointer to head
- * @
+ * @number: number
  *
  * Return: 0 (no cycle)
  */
