@@ -5,5 +5,3 @@ def square_matrix_simple(matrix=[]):
         for j in range(len(matrix[i])):
             sq_matrix[i] = [j**2 for j in matrix[i]]
     return sq_matrix
-#    return [([i][j])**2 for [i][j] in matrix]
-#    return map(lambda x: x ** 2, matrix[i][j])
