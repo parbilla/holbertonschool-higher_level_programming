@@ -36,16 +36,12 @@ int is_palindrome(listint_t **head)
 			begin->next = aux1;
 			aux1 = begin;
 		}
-		printf("salgo del while\n");
 		tail->next = begin;
-		printf("cambio el rumbo\n");
 	}
 	else
 		tail->next = *head;
-	printf("tail to head\n");
 	for (num = 0; num < nodes / 2; num++)
 	{
-		printf("num = %i\n", num);
 		if (tail->n != node->n)
 			return (0);
 		tail = tail->next;
