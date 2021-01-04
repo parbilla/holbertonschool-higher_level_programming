@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: double pointer to head of list
@@ -9,8 +9,8 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *begin = *head, *tail = *head, *aux1, *aux2;
-	int forward = 0, middle = 0, num = 0, nodes = 1, backward;
+	listint_t *beg = *head, *nod = *head, *tail = *head, *rev, *aux1, *aux2;
+	int forward = 0, middle = 0, num = 0, nodes = 1, back;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return (1);
@@ -19,38 +19,45 @@ int is_palindrome(listint_t **head)
 		tail = tail->next;
 		++nodes;
 	}
+	rev = tail;
 	if (nodes % 2 == 0)
 		middle = nodes / 2;
 	else
 		middle = (nodes + 1) / 2;
-	for (forward = 0, forward < middle; forward++)
-		begin = begin->next;
-	if (begin->next != NULL)
+	for (forward = 0; forward < middle; forward++)
+		beg = beg->next;
+	if (beg->next != NULL)
 	{
-		aux1
-		
-			while (begin->next->next != NULL)
+		aux1 = beg;
+		aux2 = beg->next;
+		while (aux2->next != NULL)
 		{
-			aux1 = begin_;
-			aux2 = begin->next;
-			aux1->next = NULL;
-		for (reverse = 0; reverse < nodes - middle; reverse++)
-		{
-			begin = aux2;
-			aux2 = begin->next;
-			begin->next = aux1;
-			aux1 = begin;
+			beg = aux2;
+			aux2 = beg->next;
+			beg->next = aux1;
+			aux1 = beg;
 		}
-		tail->next = begin;
-		backward = nodes - 1;
-	while (backward > num)
+		tail->next = beg;
+		beg = beg->next;
+	}
+	else
+		tail->next = *head;
+	for (num = 0; num < nodes / 2; num++)
 	{
-		if (tail->n != node->n)
+		if (tail->n != nod->n)
 			return (0);
-		tail->tail_next;
-		node = node->next;
-		backward--;
-		num++;
+		tail = tail->next;
+		nod = nod->next;
+	}
+	aux1 = rev;
+	aux2 = rev->next;
+	aux1->next = NULL;
+	for (back = 0; back < num - 1; back++)
+	{
+		rev = aux2;
+		aux2 = rev->next;
+		rev->next = aux1;
+		aux1 = rev;
 	}
 	return (1);
 }
