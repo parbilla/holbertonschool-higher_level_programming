@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Returns if the object is an instance of, or if it is an instance of a class that inherited from"""
+"""Returns if the object is an instance of,"""
+""" or if it is an instance of a class that inherited from"""
 
 
 def is_kind_of_class(obj, a_class):
