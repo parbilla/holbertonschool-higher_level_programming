@@ -1,19 +1,17 @@
 #!/usr/bin/python3
-"""Write a class that inherits from BaseGeometry"""
-
+"""Module of geometry"""
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
-"""New class"""
+"""Program create a rectangle"""
 
 
 class Rectangle(BaseGeometry):
-    """New sub class"""
+    """Class Rectangle inherited of base geometry"""
 
     def __init__(self, width, height):
-        """Instantiation with width and height private"""
-
+        """Constructor method"""
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
