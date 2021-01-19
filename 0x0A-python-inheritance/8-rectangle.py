@@ -1,25 +1,10 @@
 #!/usr/bin/python3
-"""Write an empty class"""
+"""Write a class that inherits from BaseGeometry"""
 
 
-class BaseGeometry:
-    """New class"""
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
+"""New class"""
 
-    pass
-
-    def area(self):
-        """public instance method"""
-
-        raise Exception(" area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates value"""
-
-        if type(value) != int:
-            raise TypeError('<name> must be an integer')
-
-        elif value <= 0:
-            raise TypeError('<name> must be greater than 0')
 
 class Rectangle(BaseGeometry):
     """New sub class"""
@@ -29,5 +14,5 @@ class Rectangle(BaseGeometry):
 
         self.__width__ = width
         self.__height__ = height
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
