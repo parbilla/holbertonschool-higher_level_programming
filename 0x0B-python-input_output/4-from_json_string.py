@@ -5,6 +5,7 @@
 
 import json
 
+
 def from_json_string(my_str):
     """JSON representation of an object"""
 
