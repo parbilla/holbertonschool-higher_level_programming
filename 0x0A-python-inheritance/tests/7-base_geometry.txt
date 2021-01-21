@@ -1,0 +1,59 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``integer_validator``
+-------------------
+This is a doctest based on 7-base_geometry.py
+Each '>>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+Import function:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test: passing one str and one int (correct output)
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", 10)
+
+Test: no arguments passed
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test: passing two strings
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", "same")
+Traceback (most recent call last):
+...
+TypeError: same must be an integer
+
+Test: passing two integers
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(10, 12)
+
+Test: empty string
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("", 12)
+
+Test: passing None
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+Test: passing a negative integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", -1)
+Traceback (most recent call last):
+...
+TypeError: name must be greater than 0
+
+Test: passing a 0
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+...
+TypeError: name must be greater than 0
