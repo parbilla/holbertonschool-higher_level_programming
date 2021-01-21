@@ -19,16 +19,12 @@ class Student:
             return self.__dict__
         new_dict = {}
         for a in attrs:
-            try:
-                new_dict[a] = self.__dict__[a]
-            except:
-                pass
+            if type(a) is str:
+                if i in self_dict__:
+                    new_dict[a] = self.__dict__[a]
         return new_dict
 
         def reload_from_json(self, json):
             """Replaces all attributes of the Student instance"""
             for key in json:
-                try:
-                    setattr(self, key, json[key])
-                except:
-                    pass
+                self.__dict__[key] = json[key]
