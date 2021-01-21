@@ -10,13 +10,13 @@ class Square(Rectangle):
     def __init__(self, size):
         """Instantiation with size"""
         self.integer_validator("size", size)
-        self.__size = size
         super().__init__(size, size)
+        self.__size = size
 
     def area(self):
         """Area method implemented"""
         return self.__size ** 2
 
-        def __str__(self):
-            """String method"""
-            return "[Square] {}/{}".format(self.__size, self.__size)
+    def __str__(self):
+        """String method"""
+        return "[Square] {}/{}".format(self.__size, self.__size)
