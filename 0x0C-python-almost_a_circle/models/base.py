@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Create a base class of all other classes of this project"""
 import json
-
+import os
 
 class Base:
     """The goal is to manage id attribute  in all the future classes"""
