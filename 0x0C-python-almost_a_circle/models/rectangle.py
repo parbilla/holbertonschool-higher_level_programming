@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""Write the class Rectangle that inherits from Base"""
 from models.base import Base
 
 class Rectangle(Base):
+    """New class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Class constructor"""
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -11,11 +14,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Get value"""
         return self.__width
 
     @width.setter
     def width(self, width):
-        """set value"""
+        """Set value"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -24,13 +28,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ get value """
-
+        """Get value"""
         return self.__height
 
     @height.setter
     def height(self, height):
-        """set value"""
+        """Set value"""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -39,12 +42,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-         """ get value """
+         """Get value """
          return self.__x
 
     @x.setter
     def x(self, x):
-        """set value"""
+        """Set value"""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -53,12 +56,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ get value """
+        """Get value """
         return self.__y
 
     @y.setter
     def y(self, y):
-        """set value"""
+        """Set value"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -66,11 +69,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """area of rectangle"""
+        """Get area of rectangle"""
         return self.width * self.height
 
     def display(self):
-        """prints in stdout the Rectangle instance with the character #"""
+        """Prints in stdout the Rectangle instance with the character #"""
         print('\n' * self.__y, end='')
 
         for i in range(self.height):
@@ -83,7 +86,7 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        """assign an argument to each attribute"""
+        """Assign an argument to each attribute"""
         rectangle_attrs = ["id", "width", "height", "x", "y"]
         if args is None or len(args) == 0:
             for k, v in kwargs.items():
@@ -94,7 +97,7 @@ class Rectangle(Base):
                 setattr(self, rectangle_attrs[i], args[i])
 
     def to_dictionary(self):
-        """return a dictionary of Rectangle"""
+        """Return a dictionary of Rectangle"""
         rectangle_dict = {'id': self.id, 'width': self.__width,
                        'height': self.__height, 'x': self.__x, 'y': self.__y}
         return rectangle_dict
