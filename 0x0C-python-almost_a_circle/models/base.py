@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+"""Create a base class of all other classes of this project"""
 import json
 
+
 class Base:
+    """The goal is to manage id attribute  in all the future classes"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Class construtor"""
         if id is not None:
             self.id = id
         else:
@@ -13,7 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """return the JSON string representation of list_dictionaries"""
+        """Return the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -21,6 +25,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file"""
         filename = cls.__name__ + '.json'
         myList = []
         with open(filename, mode='w', encoding='utf-8') as myFile:
@@ -33,6 +38,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Returns the list of the JSON string representation"""
         if json_string is None or json_string == []:
             return []
         else:
