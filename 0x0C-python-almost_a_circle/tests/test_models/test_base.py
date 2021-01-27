@@ -43,6 +43,7 @@ class TestBaseDocs(unittest.TestCase):
         for func in self.base_funcs:
             self.assertTrue(len(func[1].__doc__) >= 1)
 
+
 class TestBase(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
 
