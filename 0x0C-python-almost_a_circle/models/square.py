@@ -17,10 +17,10 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """Set value"""
-        if type(size) is not int:
+        """if type(size) is not int:
             raise TypeError("width must be an integer")
         if size <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError("width must be > 0")"""
         self.width = size
         self.height = size
 
@@ -37,7 +37,7 @@ class Square(Rectangle):
                 if k in square_attrs:
                     setattr(self, k, v)
         else:
-            for i in range (len(args)):
+            for i in range(len(args)):
                 setattr(self, square_attrs[i], args[i])
 
     def to_dictionary(self):
