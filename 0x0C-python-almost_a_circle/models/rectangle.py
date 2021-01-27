@@ -2,6 +2,7 @@
 """Write the class Rectangle that inherits from Base"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """New class"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -42,8 +43,8 @@ class Rectangle(Base):
 
     @property
     def x(self):
-         """Get value """
-         return self.__x
+        """Get value"""
+        return self.__x
 
     @x.setter
     def x(self, x):
@@ -93,11 +94,12 @@ class Rectangle(Base):
                 if k in rectangle_attrs:
                     setattr(self, k, v)
         else:
-            for i in range (len(args)):
+            for i in range(len(args)):
                 setattr(self, rectangle_attrs[i], args[i])
 
     def to_dictionary(self):
         """Return a dictionary of Rectangle"""
         rectangle_dict = {'id': self.id, 'width': self.__width,
-                       'height': self.__height, 'x': self.__x, 'y': self.__y}
+                          'height': self.__height, 'x': self.__x,
+                          'y': self.__y}
         return rectangle_dict

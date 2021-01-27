@@ -3,6 +3,7 @@
 import json
 import os
 
+
 class Base:
     """The goal is to manage id attribute  in all the future classes"""
     __nb_objects = 0
