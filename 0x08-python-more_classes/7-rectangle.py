@@ -60,11 +60,11 @@ class Rectangle:
         return string
 
     def __repr__(self):
-        """should return a string representation of the rectangle
+        """Should return a string representation of the rectangle
         to be able to recreate a new instance by using eval()"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """print message when an instance is deleted"""
+        """Print message when an instance is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
