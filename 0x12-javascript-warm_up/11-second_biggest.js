@@ -1,4 +1,5 @@
 #!/usr/bin/node
+'use strict';
 const args = process.argv.slice(2);
 let second = 0;
 if (args.length > 1) {
