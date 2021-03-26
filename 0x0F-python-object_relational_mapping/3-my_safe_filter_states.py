@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Script that lists all states from the database hbtn_0e_0_usa"""
+"""Script that takes in arguments and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument, safe from MySQL
+injections"""
 
 import MySQLdb
 from sys import argv
