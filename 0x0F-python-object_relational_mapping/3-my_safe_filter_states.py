@@ -15,7 +15,8 @@ if __name__ == "__main__":
     """Ejecuto consulta utilizando el cursor"""
     cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id",
                 (argv[4],))
-    for i in cur:
-        print(cur.fetchone())
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
     cur.close()
     db.close()
