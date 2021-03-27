@@ -12,10 +12,11 @@ if __name__ == "__main__":
     """Obtengo un cursor para ejecutar las consultas"""
     cur = db.cursor()
     """Ejecuto consulta utilizando el cursor"""
-    cur.execute("SELECT * FROM states WHERE name LIKE '{}' ORDER BY states.id"
+    cur.execute("SELECT * FROM states WHERE name LIKE '{}' ORDER BY id"
                 .format(argv[4]))
     rows = cur.fetchall()
     for i in rows:
-        print('{}'.format(i))
+        if i[1] == argv[4]:
+            print(i)
     cur.close()
     db.close()
