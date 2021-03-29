@@ -13,5 +13,5 @@ class State(Base):
     """Defines class State"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True,)
-    name = Column(String(128))
+    name = Column(String(128), nullable=False)
     cities = relationship("City", backref="state", cascade="all, delete")
