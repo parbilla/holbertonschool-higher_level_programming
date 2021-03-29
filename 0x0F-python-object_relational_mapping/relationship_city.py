@@ -2,10 +2,9 @@
 """File equal to model_city.py that contains
  the class definition of a City with no change"""
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import ForeignKey
+
 
 Base = declarative_base()
 
