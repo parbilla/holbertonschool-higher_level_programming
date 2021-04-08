@@ -11,6 +11,6 @@ def find_peak(list_of_integers):
     if len(list) == 3:
         return list[2]
     for i in range(1, (len(list) - 2)):
-        if list[i] < list[i+1]:
+        if list[i] <= list[i+1]:
             max = list[i+1]
     return max
