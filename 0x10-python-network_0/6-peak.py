@@ -5,12 +5,11 @@
 def find_peak(list_of_integers):
 
     list = list_of_integers
-    max = 0
-    if len(list) < 3:
+    if len(list) < 1:
         return None
-    if len(list) == 3:
-        return list[2]
-    for i in range(1, (len(list) - 2)):
-        if list[i] <= list[i+1]:
-            max = list[i+1]
+    max = list[0]
+    if len(list) > 1:
+        for i in range(0, (len(list) - 1)):
+            if max <= list[i+1]:
+                max = list[i+1]
     return max
