@@ -1,2 +1,2 @@
-Complexity of the algorithm:
 O(n)
+
