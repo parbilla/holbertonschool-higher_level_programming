@@ -5,8 +5,8 @@ let cont = 0;
 const name = 'https://swapi-api.hbtn.io/api/people/18/';
 request.get(urlId, function (response, body) {
   const filmList = (JSON.parse(body.body).results);
-  for (const film in filmList) {
-    for (const i in filmList[film].characters) {
+  for (let film in filmList) {
+    for (let i in filmList[film].characters) {
       if (filmList[film].characters[i] === name) {
         cont++;
       }
