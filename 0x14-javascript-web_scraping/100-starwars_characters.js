@@ -11,9 +11,9 @@ request(urlId, function (err, response, body) {
     for (const i in charList) {
       reqChar(charList[i], function (err, response, body) {
         if (err) {
-	    console.log(err);
+          console.log(err);
         } else {
-	    console.log(JSON.parse(body).name);
+          console.log(JSON.parse(body).name);
         }
       });
     }
