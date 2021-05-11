@@ -3,12 +3,12 @@
 
 
 class Rectangle:
-    """Empty class"""
+    """Representation of a rectangle"""
 
     def __init__(self, width=0, height=0):
         """Instantiation of rectangle"""
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def width(self):
@@ -56,10 +56,10 @@ class Rectangle:
         return str
 
     def __repr__(self):
-        """should return a string representation of the rectangle
+        """Returns a string representation of the rectangle
         to be able to recreate a new instance by using eval()"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """print message when an instance is deleted"""
+        """Prints message when an instance is deleted"""
         print("Bye rectangle...")
