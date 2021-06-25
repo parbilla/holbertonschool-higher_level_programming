@@ -129,3 +129,7 @@ Test 15: with None
 Traceback (most recent call last):
     ...
 TypeError: unorderable types: NoneType() < int()
+
+Test 16: check that MyList inherits from list:
+>>> issubclass(MyList, list)
+True
