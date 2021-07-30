@@ -1,5 +1,6 @@
 -- Lists all shows from the database hbtn_0d_tvshows_rate by their rating
-SELECT ts.title, sum(tr.rate)
+
+SELECT ts.title, sum(tr.rate) AS 'rating'
 FROM tv_shows ts
 INNER JOIN tv_show_ratings tr
 ON ts.id=tr.show_id
